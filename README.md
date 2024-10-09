@@ -1,59 +1,105 @@
+<div align="center">
+
+![MediaDL](square.and.arrow.down.fill.png)
+
 # MediaDL
 
-🎬 One-click media downloader for iOS and iPadOS, available in your ShareSheet. Powered by Siri Shortcuts & Scriptable.
+[![Release][gh-release-badge]][gh-release-link]
+[![GitHub Issues][gh-issues-badge]][gh-issues-link]
+[![GitHub Pull Requests][gh-pulls-badge]][gh-pulls-link]
 
-> Everything is executed on your device, there is no third-party.
+</div>
+
+A very simple solution that does nothing else than it needs to. There are **_no ads, unnecessary prompts, tracking or third-party involved_**; everything is **_executed on-device_** and you never have to leave the currently opened application.
+
+You really do not have to think about it after the initial setup.
+
+## Supported platforms ✅
+
+- [ ] Facebook
+- [x] Instagram (requires sign-in)
+- [ ] Pinterest
+- [ ] Reddit
+- [ ] Snapchat
+- [ ] Threads
+- [ ] TikTok
+- [ ] Tumblr
+- [ ] Twitch
+- [ ] Vimeo
+- [ ] X (formerly Twitter)
+- [ ] YouTube
 
 ## How to use 🎛️
 
 1. Share a post
 2. To MediaDL
 3. You do not leave the current application
-4. Save to Photos
-5. Works on their websites too
-
-## Supported platforms ✅
-
-- [x] Instagram (requires sign-in)
-- [ ] Twitter
-- [ ] YouTube
-- [ ] TikTok
-- [ ] Facebook
-- [ ] Vimeo
-- [ ] Snapchat
-- [ ] Reddit
-- [ ] Threads
+4. Media is saved in your device
+5. Works on websites too
 
 ## Installation 📲
 
-1. The Shortcuts app comes preinstalled on Apple devices, in the case it is not installed on your device, install [Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) from the App Store.
-2. Add [MediaDL](https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd) Shortcut.
-3. If you want to download from a platform like Instagram, or download media private to you, you will have to install [Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188) from the App Store.
+1. The Shortcuts app comes preinstalled on Apple devices. In the case that yours is deleted, install [Shortcuts][shortcuts-app-link] from the App Store.
+2. Add the [MediaDL][mediadl-shortcut-link] Shortcut to your Shortcuts library.
+3. If you want to download media private to you or from a platform like Instagram, you have to install [Scriptable][scriptable-app-link] from the App Store.
 
-> You do not need Scriptable installed for platforms that DO NOT require sign-in.
+   > You do not need Scriptable installed for platforms that DO NOT require sign-in.
 
-Attempt to download a picture or video from a specific platform. If the platform requires you to sign in, Scriptable will open a WebView for you to sign in. Sign in and close Scriptable. Future downloads from the platform should complete from now on.
+4. Attempt to download a picture or video from a specific platform. If the platform requires you to sign in, Scriptable will open a WebView for you to sign in. Sign in and close Scriptable. Future downloads from the platform should complete from now on.
 
 ## Important Notes 🗒️
 
-- Downloading private media may not be in line with the platform's [Terms of Use](https://en.wikipedia.org/wiki/Terms_of_service). **DO YOUR OWN RESEARCH** and act accordingly.
+- MediaDL will **_never ask_** for your username/email or password. You will be presented with a WebView to login into the relevant official platform using their official methods.
 
-- When using mobile data to access the internet, mobile data has to be switched on for both Shortcuts & Scriptable in your device settings for downloads to work.
+- When using mobile data to access the internet, mobile data has to be turned on for both Shortcuts & Scriptable in your device settings for downloads to work.
 
-- You have to be signed in to the specific platform to be able to access media private to you.
+- You have to be signed in to the specific platform to access media private to you.
 
-## Contribute 🏗️
+- You may not have access to sensitive/NSFW content without being signed in to the specific platform.
+
+## Ethics and Disclaimer ⚠️
+
+MediaDL is a tool designed to simplify content downloads from the internet, with **_zero liability_**. You are responsible for what you download, how you use, and distribute that content. Please be mindful of using others’ content and always credit the original creators. Fair use and proper credits benefit everyone.
+
+**MediaDL is NOT a piracy tool** and cannot be used as such. It only downloads free, publicly accessible content, which can also be downloaded through any browser’s developer tools. This tool offers a **convenient**, **clutter-free**, **one-click solution** for repetitive actions.
+
+> This section is gotten from <https://github.com/imputnet/cobalt#ethics-and-disclaimer> and refined a bit.
+
+## Contribute 💡
 
 Check the [Contribution Guide](./CONTRIBUTING.md) for how to contribute to this project.
 
-## Changelog 🔗
+## License 🤝
 
-Check [CHANGELOG.md](./CHANGELOG.md) for full changelog.
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://mediadl.plbstl.io">MediaDL</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
 
-### Latest change ⬇️
+**You are free to:**
 
-#### v1.0 (2024.02.29)
+- **Share** — copy and redistribute the material in any medium or format.
 
-##### 🗞️ New
+- **Adapt** — remix, transform, and build upon the material.
 
-- Support for Instagram
+**Under the following terms:**
+
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+- **NonCommercial** — You may not use the material for commercial purposes.
+
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+- **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+<!-- Badges -->
+
+[gh-issues-badge]: https://img.shields.io/github/issues/plbstl/MediaDL
+[gh-issues-link]: https://github.com/plbstl/MediaDL/issues
+[gh-pulls-badge]: https://img.shields.io/github/issues-pr/plbstl/MediaDL
+[gh-pulls-link]: https://github.com/plbstl/MediaDL/pulls
+[gh-release-badge]: https://img.shields.io/github/v/release/plbstl/MediaDL?sort=semver
+[gh-release-link]: https://github.com/plbstl/MediaDL/releases
+
+<!-- App links -->
+
+[mediadl-shortcut-link]: https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd
+[scriptable-app-link]: https://apps.apple.com/app/scriptable/id1405459188
+[shortcuts-app-link]: https://apps.apple.com/app/shortcuts/id915249334
