@@ -12,7 +12,7 @@ Questions can be asked about, suggestions and complaints can be made for new and
 
 When you are submitting a pull request, _the pull request has to be linked to an open issue_. Although you can open an issue after submission, it is better you open one before submitting the pull request.
 
-Here is a helper video on how to make pull requests: <https://youtu.be/8lGpZkjnkt4>
+Here is a helper video on the process of submitting pull requests: <https://youtu.be/8lGpZkjnkt4>
 
 ## Attach Shortcut
 
