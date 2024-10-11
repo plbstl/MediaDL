@@ -1,0 +1,6 @@
+en:
+  t_errorOcurred: An error occurred
+  t_requireLogin: You have to sign it for downloads to work. Continue to sign in?
+  t_loginAftermath: Log in and tap Close. Then share the post again to save it
+  t_emptyDownloadLinks: No download files found
+  t_chooseSaveFiles: Choose files to save
