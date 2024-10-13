@@ -100,6 +100,6 @@ Check the [Contribution Guide](./CONTRIBUTING.md) for how to contribute to this 
 
 <!-- App links -->
 
-[mediadl-shortcut-link]: https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd
+[mediadl-shortcut-link]: https://www.icloud.com/shortcuts/541e44a65b4a428b9f51d3f171074983
 [scriptable-app-link]: https://apps.apple.com/app/scriptable/id1405459188
 [shortcuts-app-link]: https://apps.apple.com/app/shortcuts/id915249334
