@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://plbstl.github.io/MediaDL" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171717" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#171717" />
+    <title>MediaDL | for iOS and iPadOS</title>
+    <meta
+      name="description"
+      content="Download pictures and videos from your favorite online platforms without leaving the currently opened app."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="MediaDL" />
+    <meta property="og:url" content="https://plbstl.github.io/MediaDL" />
+    <meta property="og:title" content="MediaDL | for iOS and iPadOS" />
+    <meta property="og:image" content="/MediaDL/MediaDL-Website-Cover-512.png" />
+    <meta
+      property="og:description"
+      content="Download pictures and videos from your favorite online platforms without leaving the currently opened app."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@plbstl" />
+    <meta name="twitter:creator" content="@plbstl" />
+    <meta name="twitter:title" content="MediaDL | for iOS and iPadOS" />
+    <meta name="twitter:image" content="/MediaDL/MediaDL-Website-Cover-512.png" />
+    <meta
+      name="twitter:description"
+      content="Download pictures and videos from your favorite online platforms without leaving the currently opened app."
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/MediaDL/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/MediaDL/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/MediaDL/favicon-16x16.png" />
+    <link rel="manifest" href="/MediaDL/site.webmanifest" />
+    <link rel="stylesheet" href="https://preline.co/assets/css/main.min.css?v=2.5.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      const html = document.querySelector('html')
+      const isLightOrAuto =
+        localStorage.getItem('theme') === 'light' ||
+        (localStorage.getItem('theme') === 'auto' && !window.matchMedia('(prefers-color-scheme: dark)').matches)
+      const isDarkOrAuto =
+        localStorage.getItem('theme') === 'dark' ||
+        (localStorage.getItem('theme') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+      if (isLightOrAuto && html.classList.contains('dark')) html.classList.remove('dark')
+      else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove('light')
+      else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark')
+      else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light')
+    </script>
+  </head>
+
+  <body class="bg-neutral-900">
+    <header
+      class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md"
+    >
+      <nav
+        class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto"
+      >
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a
+            class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+            href="/MediaDL"
+            aria-label="MediaDL"
+          >
+            <div class="text-white inline-flex gap-x-1 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pb-1"
+              >
+                <path d="M12 2v8" />
+                <path d="m16 6-4 4-4-4" />
+                <rect width="20" height="8" x="2" y="14" rx="2" />
+                <path d="M6 18h.01" />
+                <path d="M10 18h.01" />
+              </svg>
+              <span>MediaDL</span>
+            </div>
+          </a>
+          <!-- End Logo -->
+
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
+              id="hs-navbar-floating-dark-collapse"
+              aria-expanded="false"
+              aria-controls="hs-navbar-floating-dark"
+              aria-label="Toggle navigation"
+              data-hs-collapse="#hs-navbar-floating-dark"
+            >
+              <svg
+                class="hs-collapse-open:hidden shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+              </svg>
+              <svg
+                class="hs-collapse-open:block hidden shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Collapse -->
+        <div
+          id="hs-navbar-floating-dark"
+          class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+          aria-labelledby="hs-navbar-floating-dark-collapse"
+        >
+          <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+            <a
+              class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+              href="/MediaDL/#installation"
+              aria-current="page"
+            >
+              Installation
+            </a>
+            <a
+              class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+              href="/MediaDL/#supported-platforms"
+              aria-current="page"
+            >
+              Supported Platforms
+            </a>
+            <a
+              class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+              href="/MediaDL/#how-to-use"
+              aria-current="page"
+            >
+              How to Use
+            </a>
+            <a
+              class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+              href="/MediaDL/#notes"
+              aria-current="page"
+            >
+              Notes
+            </a>
+            <a
+              class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+              href="/MediaDL/#disclaimer"
+              aria-current="page"
+            >
+              Disclaimer
+            </a>
+            <div>
+              <!-- install-link -->
+              <a
+                class="inline-flex justify-center items-center text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-1 px-3"
+                href="https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd"
+              >
+                Install
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- End Collapse -->
+      </nav>
+    </header>
+
+    <main id="content">
+      <!-- Hero -->
+      <div
+        class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('/squared-bg-element-light.svg')] dark:before:bg-[url('/squared-bg-element-dark.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2"
+      >
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-40 pb-14">
+          <!-- GitHub Banner -->
+          <div class="flex justify-center">
+            <a
+              class="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 focus:outline-none focus:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:focus:border-neutral-600"
+              href="https://github.com/plbstl/MediaDL"
+              target="_blank"
+            >
+              Source code available
+              <span class="flex items-center gap-x-1">
+                <span class="border-s border-gray-200 text-blue-600 ps-2 dark:text-blue-500 dark:border-neutral-700">
+                  View
+                </span>
+                <svg
+                  class="shrink-0 size-4 text-blue-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <!-- End GitHub Banner -->
+
+          <!-- Title -->
+          <div class="mt-5 max-w-xl text-center mx-auto">
+            <h1 class="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
+              Downloader for iOS and iPadOS
+            </h1>
+          </div>
+          <!-- End Title -->
+
+          <div class="mt-5 max-w-3xl text-center mx-auto">
+            <p class="text-lg text-gray-600 dark:text-neutral-400">
+              MediaDL is a simple-to-use utility for downloading pictures and videos from popular online platforms.
+            </p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-8 gap-3 flex justify-center">
+            <!-- install-link -->
+            <a
+              class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4"
+              href="https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd"
+            >
+              <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-layers-2"
+              >
+                <path
+                  d="m16.02 12 5.48 3.13a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74L7.98 12"
+                />
+                <path
+                  d="M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74Z"
+                />
+              </svg>
+              Install MediaDL
+            </a>
+          </div>
+          <!-- End Buttons -->
+        </div>
+      </div>
+      <!-- End Hero -->
+
+      <!-- Hero Design -->
+      <div class="relative overflow-hidden pt-4 bg-neutral-900">
+        <svg
+          class="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
+          width="2745"
+          height="488"
+          viewBox="0 0 2745 488"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.5 330.864C232.505 403.801 853.749 527.683 1482.69 439.719C2111.63 351.756 2585.54 434.588 2743.87 487"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 308.873C232.505 381.81 853.749 505.692 1482.69 417.728C2111.63 329.765 2585.54 412.597 2743.87 465.009"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 286.882C232.505 359.819 853.749 483.701 1482.69 395.738C2111.63 307.774 2585.54 390.606 2743.87 443.018"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 264.891C232.505 337.828 853.749 461.71 1482.69 373.747C2111.63 285.783 2585.54 368.615 2743.87 421.027"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 242.9C232.505 315.837 853.749 439.719 1482.69 351.756C2111.63 263.792 2585.54 346.624 2743.87 399.036"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 220.909C232.505 293.846 853.749 417.728 1482.69 329.765C2111.63 241.801 2585.54 324.633 2743.87 377.045"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 198.918C232.505 271.855 853.749 395.737 1482.69 307.774C2111.63 219.81 2585.54 302.642 2743.87 355.054"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 176.927C232.505 249.864 853.749 373.746 1482.69 285.783C2111.63 197.819 2585.54 280.651 2743.87 333.063"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 154.937C232.505 227.873 853.749 351.756 1482.69 263.792C2111.63 175.828 2585.54 258.661 2743.87 311.072"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 132.946C232.505 205.882 853.749 329.765 1482.69 241.801C2111.63 153.837 2585.54 236.67 2743.87 289.082"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 110.955C232.505 183.891 853.749 307.774 1482.69 219.81C2111.63 131.846 2585.54 214.679 2743.87 267.091"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 88.9639C232.505 161.901 853.749 285.783 1482.69 197.819C2111.63 109.855 2585.54 192.688 2743.87 245.1"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 66.9729C232.505 139.91 853.749 263.792 1482.69 175.828C2111.63 87.8643 2585.54 170.697 2743.87 223.109"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 44.9819C232.505 117.919 853.749 241.801 1482.69 153.837C2111.63 65.8733 2585.54 148.706 2743.87 201.118"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 22.991C232.505 95.9276 853.749 219.81 1482.69 131.846C2111.63 43.8824 2585.54 126.715 2743.87 179.127"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+          <path
+            d="M0.5 1C232.505 73.9367 853.749 197.819 1482.69 109.855C2111.63 21.8914 2585.54 104.724 2743.87 157.136"
+            class="stroke-neutral-700/50"
+            stroke="currentColor"
+          ></path>
+        </svg>
+
+        <div class="relative z-10">
+          <div class="max-w-5xl px-4 xl:px-0 mx-auto">
+            <div class="mb-12"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Hero Design -->
+
+      <!-- Installation and Supported Platforms -->
+      <div class="bg-neutral-900 bg-gradient-to-t from-black to-transparent">
+        <div class="max-w-5xl px-4 xl:px-0 py-24 mx-auto">
+          <!-- Installation -->
+          <div class="max-w-3xl mb-10 lg:mb-14" id="installation">
+            <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Installation</h2>
+            <p class="mt-6 text-neutral-400">
+              MediaDL depends on two applications to work. The first app (Shortcuts) comes preinstalled on Apple
+              devices. The second app (Scriptable) is a third-party app that provides extra functionality not currently
+              available in the Shortcuts app.
+            </p>
+            <div class="flex gap-x-10 mx-auto w-fit mt-6">
+              <a
+                class="group inline-flex items-center gap-x-1 font-medium text-sm text-blue-500 decoration-2 hover:underline focus:outline-none focus:underline"
+                href="https://apps.apple.com/app/shortcuts/id915249334"
+              >
+                Shortcuts
+                <svg
+                  class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+              <a
+                class="group inline-flex items-center gap-x-1 font-medium text-sm text-blue-500 decoration-2 hover:underline focus:outline-none focus:underline"
+                href="https://apps.apple.com/app/scriptable/id1405459188"
+              >
+                Scriptable
+                <svg
+                  class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- End Installation -->
+
+          <!-- Supported Platforms -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-3 items-center border border-neutral-700 divide-y lg:divide-y-0 lg:divide-x divide-neutral-700 rounded-xl"
+          >
+            <div
+              class="group relative z-10 p-4 md:p-6 h-full flex flex-col bg-neutral-900 focus:outline-none first:rounded-t-xl last:rounded-b-xl lg:first:rounded-l-xl lg:first:rounded-tr-none lg:last:rounded-r-xl lg:last:rounded-bl-none before:absolute before:inset-0 before:bg-gradient-to-b before:hover:from-transparent before:hover:via-transparent before:hover:to-[#ff0]/10 before:via-80% before:focus:from-transparent before:focus:via-transparent before:focus:to-[#ff0]/10 before:-z-[1] before:last:rounded-b-xl lg:before:first:rounded-s-xl lg:before:last:rounded-e-xl lg:before:last:rounded-bl-none before:opacity-0 before:hover:opacity-100 before:focus:opacity-100"
+            >
+              <p class="font-semibold text-white inline-flex items-center text-2xl gap-x-2">
+                <svg
+                  aria-label="Instagram icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-6"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+                Instagram
+              </p>
+              <h3 class="mt-5 font-medium text-sm text-white">
+                Profile pictures, reels, stories, highlights, albums, images
+              </h3>
+            </div>
+            <div
+              class="group relative z-10 p-4 md:p-6 h-full flex flex-col bg-neutral-900 focus:outline-none first:rounded-t-xl last:rounded-b-xl lg:first:rounded-l-xl lg:first:rounded-tr-none lg:last:rounded-r-xl lg:last:rounded-bl-none before:absolute before:inset-0 before:bg-gradient-to-b before:hover:from-transparent before:hover:via-transparent before:hover:to-[#ff0]/10 before:via-80% before:focus:from-transparent before:focus:via-transparent before:focus:to-[#ff0]/10 before:-z-[1] before:last:rounded-b-xl lg:before:first:rounded-s-xl lg:before:last:rounded-e-xl lg:before:last:rounded-bl-none before:opacity-0 before:hover:opacity-100 before:focus:opacity-100"
+            >
+              <p class="font-semibold text-2xl text-white">𝕏 (Twitter)</p>
+              <h3 class="mt-5 font-medium text-sm text-white">Videos only</h3>
+            </div>
+            <div
+              class="group relative z-10 p-4 md:p-6 h-full flex flex-col bg-neutral-900 focus:outline-none first:rounded-t-xl last:rounded-b-xl lg:first:rounded-l-xl lg:first:rounded-tr-none lg:last:rounded-r-xl lg:last:rounded-bl-none before:absolute before:inset-0 before:bg-gradient-to-b before:hover:from-transparent before:hover:via-transparent before:hover:to-[#ff0]/10 before:via-80% before:focus:from-transparent before:focus:via-transparent before:focus:to-[#ff0]/10 before:-z-[1] before:last:rounded-b-xl lg:before:first:rounded-s-xl lg:before:last:rounded-e-xl lg:before:last:rounded-bl-none before:opacity-0 before:hover:opacity-100 before:focus:opacity-100"
+            >
+              <p class="font-semibold text-white inline-flex items-center text-2xl gap-x-2">
+                <svg
+                  aria-label="YouTube icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-7"
+                >
+                  <path
+                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                  />
+                  <path d="m10 15 5-3-5-3z" />
+                </svg>
+                YouTube
+              </p>
+              <h3 class="mt-5 font-medium text-sm text-white">Playlists, YT shorts and single videos. Audio support</h3>
+            </div>
+          </div>
+          <!-- End Supported Platforms -->
+        </div>
+      </div>
+      <!-- End Installation and Supported Platforms -->
+
+      <!-- How to Use -->
+      <div class="bg-neutral-900" id="how-to-use">
+        <div class="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 mx-auto">
+          <!-- Title -->
+          <div class="max-w-3xl mb-10 lg:mb-14">
+            <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">How to use</h2>
+            <p class="mt-1 text-neutral-400">
+              <strong class="font-normal">
+                There are
+                <span class="font-bold">no ads</span>, <span class="font-bold">unnecessary prompts</span>,
+                <span class="font-bold">tracking</span> or <span class="font-bold">third-party involved</span>;
+                everything is executed <span class="font-bold">on-device</span> and
+                <span class="text-bold">you never have to leave the currently opened application</span>.
+              </strong>
+            </p>
+          </div>
+          <!-- End Title -->
+
+          <!-- Grid -->
+          <div class="mx-5">
+            <!-- Heading -->
+            <div class="mb-4">
+              <h3 class="text-xs font-medium uppercase text-purple-400">Steps</h3>
+            </div>
+            <!-- End Heading -->
+
+            <!-- Item -->
+            <div class="flex gap-x-5 ms-1">
+              <!-- Icon -->
+              <div
+                class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800"
+              >
+                <div class="relative z-10 size-8 flex justify-center items-center">
+                  <span
+                    class="flex shrink-0 justify-center items-center size-8 border border-neutral-800 text-purple-400 font-semibold text-xs uppercase rounded-full"
+                  >
+                    1
+                  </span>
+                </div>
+              </div>
+              <!-- End Icon -->
+
+              <!-- Right Content -->
+              <div class="grow pt-0.5 pb-8 sm:pb-12">
+                <p class="text-sm lg:text-base text-neutral-400">
+                  <span class="text-white">Share a post:</span>
+                  Click on the relevant Share post icon in the application you're in, to bring up the ShareSheet.
+                </p>
+              </div>
+              <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-5 ms-1">
+              <!-- Icon -->
+              <div
+                class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800"
+              >
+                <div class="relative z-10 size-8 flex justify-center items-center">
+                  <span
+                    class="flex shrink-0 justify-center items-center size-8 border border-neutral-800 text-purple-400 font-semibold text-xs uppercase rounded-full"
+                  >
+                    2
+                  </span>
+                </div>
+              </div>
+              <!-- End Icon -->
+
+              <!-- Right Content -->
+              <div class="grow pt-0.5 pb-8 sm:pb-12">
+                <p class="text-sm lg:text-base text-neutral-400">
+                  <span class="text-white">Share to MediaDL:</span>
+                  When the ShareSheet shows, scroll until you find the MediaDL option, then choose it. The first attempt
+                  requires you to grant MediaDL permissions to make requests, read through it and click Always Allow.
+                </p>
+              </div>
+              <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-5 ms-1">
+              <!-- Icon -->
+              <div
+                class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800"
+              >
+                <div class="relative z-10 size-8 flex justify-center items-center">
+                  <span
+                    class="flex shrink-0 justify-center items-center size-8 border border-neutral-800 text-purple-400 font-semibold text-xs uppercase rounded-full"
+                  >
+                    3
+                  </span>
+                </div>
+              </div>
+              <!-- End Icon -->
+
+              <!-- Right Content -->
+              <div class="grow pt-0.5 pb-8 sm:pb-12">
+                <p class="text-sm md:text-base text-neutral-400">
+                  <span class="text-white">Continue:</span>
+                  Just like that, MediaDL starts working and you can continue using the application. Prompts to select
+                  media might popup if you're downloading multiple items at once.
+                </p>
+              </div>
+              <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-5 ms-1">
+              <!-- Icon -->
+              <div
+                class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800"
+              >
+                <div class="relative z-10 size-8 flex justify-center items-center">
+                  <span
+                    class="flex shrink-0 justify-center items-center size-8 border border-neutral-800 text-purple-400 font-semibold text-xs uppercase rounded-full"
+                  >
+                    4
+                  </span>
+                </div>
+              </div>
+              <!-- End Icon -->
+
+              <!-- Right Content -->
+              <div class="grow pt-0.5 pb-8 sm:pb-12">
+                <p class="text-sm md:text-base text-neutral-400">
+                  <span class="text-white">Media saved:</span>
+                  A visual loader shows the progress and when its done, the file will have been downloaded and placed in
+                  the relevant location in your device.
+                </p>
+              </div>
+              <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- install-link -->
+            <a
+              class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:from-violet-600 focus:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full py-2 px-3"
+              href="https://www.icloud.com/shortcuts/61567f8df8f54f5ebd5991ebaa3b5dbd"
+            >
+              <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-layers-2"
+              >
+                <path
+                  d="m16.02 12 5.48 3.13a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74L7.98 12"
+                />
+                <path
+                  d="M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74Z"
+                />
+              </svg>
+              Install MediaDL
+            </a>
+          </div>
+          <!-- End Grid -->
+        </div>
+      </div>
+      <!-- End How to Use -->
+
+      <!-- Disclaimer and Notes -->
+      <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
+          <!-- Disclaimer -->
+          <div class="" id="disclaimer">
+            <!-- Title -->
+            <div class="max-w-3xl mb-10 lg:mb-14">
+              <div class="inline-flex gap-x-2 items-center">
+                <span aria-label="important">⚠️</span>
+                <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Ethics and Disclaimer</h2>
+                <span aria-label="important">⚠️</span>
+              </div>
+              <p class="mt-4 text-neutral-400">
+                <span class="font-bold">MediaDL</span> is a tool designed to simplify content downloads from the
+                internet, with <em class="font-bold not-italic">zero liability</em>. You are responsible for what you
+                download, how you use, and distribute that content. Please be mindful of using others’ content and
+                always credit the original creators. Fair use and proper credits benefit everyone.
+              </p>
+              <p class="mt-6 text-neutral-400">
+                <strong>MediaDL is NOT a piracy tool</strong> and cannot be used as such. It only downloads free,
+                publicly accessible content, which can also be downloaded through any browser’s developer tools.
+                <strong class="font-normal">
+                  This tool offers a <span class="font-bold">convenient</span>,
+                  <span class="font-bold">clutter-free</span>, <span class="font-bold">one-click solution</span> for
+                  repetitive actions.
+                </strong>
+              </p>
+            </div>
+            <!-- End Title -->
+          </div>
+          <!-- End Disclaimer -->
+
+          <!-- Important Notes -->
+          <div class="" id="notes">
+            <!-- Title -->
+            <div class="max-w-3xl mb-10 lg:mb-14">
+              <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Important notes</h2>
+              <p class="mt-4 text-neutral-400">
+                <svg
+                  class="inline shrink-0 size-5 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                MediaDL will <em class="font-bold not-italic">never ask</em> you for your username, email, password or
+                any other information used to sign in to any platform. You will be
+                <em class="font-bold not-italic">presented with a WebView</em> to login into the relevant official
+                platform using their official methods.
+              </p>
+              <p class="mt-5 text-neutral-400">
+                <svg
+                  class="inline shrink-0 size-5 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                When using mobile data to access the internet, mobile data has to be turned on for both Shortcuts &
+                Scriptable in your device settings for downloads to work.
+              </p>
+              <p class="mt-5 text-neutral-400">
+                <svg
+                  class="inline shrink-0 size-5 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                You have to be signed in to the specific platform to access media private to you.
+              </p>
+              <p class="mt-5 text-neutral-400">
+                <svg
+                  class="inline shrink-0 size-5 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                You may not have access to sensitive or NSFW content without being signed in to the specific platform.
+              </p>
+
+              <p class="mt-5 text-neutral-400">
+                <svg
+                  class="inline shrink-0 size-5 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-right"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                When the ShareSheet shows, you can scroll all the way down to edit the items shown. That way, MediaDL
+                can be moved to the top.
+              </p>
+            </div>
+            <!-- End Title -->
+          </div>
+          <!-- End Important Notes -->
+        </div>
+      </div>
+      <!-- End Disclaimer and Notes -->
+    </main>
+
+    <footer class="relative overflow-hidden bg-neutral-900">
+      <svg
+        class="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
+        width="2745"
+        height="488"
+        viewBox="0 0 2745 488"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.5 330.864C232.505 403.801 853.749 527.683 1482.69 439.719C2111.63 351.756 2585.54 434.588 2743.87 487"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 308.873C232.505 381.81 853.749 505.692 1482.69 417.728C2111.63 329.765 2585.54 412.597 2743.87 465.009"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 286.882C232.505 359.819 853.749 483.701 1482.69 395.738C2111.63 307.774 2585.54 390.606 2743.87 443.018"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 264.891C232.505 337.828 853.749 461.71 1482.69 373.747C2111.63 285.783 2585.54 368.615 2743.87 421.027"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 242.9C232.505 315.837 853.749 439.719 1482.69 351.756C2111.63 263.792 2585.54 346.624 2743.87 399.036"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 220.909C232.505 293.846 853.749 417.728 1482.69 329.765C2111.63 241.801 2585.54 324.633 2743.87 377.045"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 198.918C232.505 271.855 853.749 395.737 1482.69 307.774C2111.63 219.81 2585.54 302.642 2743.87 355.054"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 176.927C232.505 249.864 853.749 373.746 1482.69 285.783C2111.63 197.819 2585.54 280.651 2743.87 333.063"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 154.937C232.505 227.873 853.749 351.756 1482.69 263.792C2111.63 175.828 2585.54 258.661 2743.87 311.072"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 132.946C232.505 205.882 853.749 329.765 1482.69 241.801C2111.63 153.837 2585.54 236.67 2743.87 289.082"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 110.955C232.505 183.891 853.749 307.774 1482.69 219.81C2111.63 131.846 2585.54 214.679 2743.87 267.091"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 88.9639C232.505 161.901 853.749 285.783 1482.69 197.819C2111.63 109.855 2585.54 192.688 2743.87 245.1"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 66.9729C232.505 139.91 853.749 263.792 1482.69 175.828C2111.63 87.8643 2585.54 170.697 2743.87 223.109"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 44.9819C232.505 117.919 853.749 241.801 1482.69 153.837C2111.63 65.8733 2585.54 148.706 2743.87 201.118"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 22.991C232.505 95.9276 853.749 219.81 1482.69 131.846C2111.63 43.8824 2585.54 126.715 2743.87 179.127"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M0.5 1C232.505 73.9367 853.749 197.819 1482.69 109.855C2111.63 21.8914 2585.54 104.724 2743.87 157.136"
+          class="stroke-neutral-700/50"
+          stroke="currentColor"
+        ></path>
+      </svg>
+
+      <div class="relative z-10">
+        <div class="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
+          <div class="inline-flex items-center">
+            <!-- Logo -->
+            <div class="text-white inline-flex gap-x-1 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pb-1"
+              >
+                <path d="M12 2v8" />
+                <path d="m16 6-4 4-4-4" />
+                <rect width="20" height="8" x="2" y="14" rx="2" />
+                <path d="M6 18h.01" />
+                <path d="M10 18h.01" />
+              </svg>
+              <span>MediaDL</span>
+            </div>
+            <!-- End Logo -->
+
+            <div class="border-s border-neutral-700 ps-5 ms-5">
+              <p
+                class="text-sm text-neutral-400"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:dct="http://purl.org/dc/terms/"
+              >
+                MediaDL is licensed under
+                <a
+                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+                  target="_blank"
+                  rel="license noopener noreferrer"
+                  class="inline-flex items-center text-white underline"
+                >
+                  CC BY-NC-SA 4.0
+                  <img
+                    style="height: 22px !important; margin-left: 3px; vertical-align: text-bottom"
+                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+                    alt=""
+                  />
+                  <img
+                    style="height: 22px !important; margin-left: 3px; vertical-align: text-bottom"
+                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+                    alt=""
+                  />
+                  <img
+                    style="height: 22px !important; margin-left: 3px; vertical-align: text-bottom"
+                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+                    alt=""
+                  />
+                  <img
+                    style="height: 22px !important; margin-left: 3px; vertical-align: text-bottom"
+                    src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+                    alt=""
+                  />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://preline.co/assets/vendor/preline/dist/index.js?v=2.5.0"></script>
+  </body>
+</html>

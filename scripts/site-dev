@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo -e "\nhttp://localhost:8080/MediaDL\nhttp://0.0.0.0:8080/MediaDL\n"
+
+npx live-server docs --no-browser --port="8080" --host="0.0.0.0" \
+  --mount="/MediaDL:docs" --entry-file="404.html"
