@@ -31,11 +31,15 @@ You really do not have to think about it after the initial setup.
 
 ## How to use 🎛️
 
-1. Share a post
-2. To MediaDL
-3. You do not leave the current application
-4. Media is saved in your device
-5. Works on websites too
+1. **Share a post:** Click on the relevant Share post icon in the application you're in, to bring up the ShareSheet.
+
+2. **Share to MediaDL:** When the ShareSheet shows, scroll until you find the MediaDL option, then choose it. The first attempt requires you to grant MediaDL permissions to make requests, read through it and click Always Allow.
+
+3. **Continue:** Just like that, MediaDL starts working and you can continue using the application. Prompts to select media might popup if you're downloading multiple items at once.
+
+4. **Media saved:** A visual loader shows the progress and when its done, the file will have been downloaded and placed in the relevant location in your device.
+
+MediaDL works in browsers too.
 
 ## Installation 📲
 
