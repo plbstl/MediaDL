@@ -44,15 +44,13 @@ async function instagram() {
 
     // Check if the inputted URL is a profile page
     if (profilePageRegex.test(inputUrl)) {
+      // We download the profile's stories (if any) and profile picture.
+
       // Extract the ID of the inputted user profile
       const [userId] = userIdRegex.exec(html)
       if (!userId) {
         return scriptError('Missing user ID')
       }
-
-      // Check if the inputted user profile has stories posted
-      // Why? Because we don't want to prompt the user when the sane thing to
-      // do is to auto-download the display picture of the inputted user profile
 
       // Fetch the inputted user profile's display picture and stories
       const [reelsMedia, userInfo] = await Promise.all([
@@ -74,11 +72,11 @@ async function instagram() {
           downloadLinks.push(link)
         }
 
+        // We are always returning the profile picture. Trying to
+        // reduce prompts, this can always be changed.
         // Collate an output and exit
         return instagramOutput({
-          downloadLinks: downloadLinks.flat(),
-          profilePictureDownloadLink: userInfo.user.hd_profile_pic_url_info.url,
-          downloadProfilePicOnly: true,
+          downloadLinks: [...downloadLinks.flat(), userInfo.user.hd_profile_pic_url_info.url],
           authorUsername: userInfo.user.username
         })
       } else {
@@ -142,8 +140,6 @@ async function instagram() {
     /** @type {InstagramOutput} */
     const defaultOutput = {
       downloadLinks: [],
-      profilePictureDownloadLink: '',
-      downloadProfilePicOnly: false,
       requiresUserLogin: false,
       authorUsername: 'instagram_user'
     }
@@ -202,8 +198,6 @@ async function instagram() {
   /**
    * @typedef {{
    * downloadLinks: DownloadLink[],
-   * profilePictureDownloadLink: string,
-   * downloadProfilePicOnly: boolean,
    * requiresUserLogin: boolean
    * authorUsername: string
    * }} InstagramOutput
