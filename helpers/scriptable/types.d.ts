@@ -2,6 +2,7 @@ export type InstagramOutput = {
   downloadLinks: DownloadLink[]
   requiresUserLogin: boolean
   authorUsername: string
+  platform: 'Instagram'
 }
 
 export interface DownloadLink {

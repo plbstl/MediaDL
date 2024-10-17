@@ -141,7 +141,8 @@ async function instagram() {
     const defaultOutput = {
       downloadLinks: [],
       requiresUserLogin: false,
-      authorUsername: 'instagram_user'
+      authorUsername: 'instagram_user',
+      platform: 'Instagram'
     }
     return { ...defaultOutput, ...output }
   }
