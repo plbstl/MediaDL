@@ -10,9 +10,13 @@
 
 </div>
 
+<div align="center">
+
 A very simple solution that does nothing else than it needs to. There are **_no ads, unnecessary prompts, tracking or third-party involved_**; everything is **_executed on-device_** and you never have to leave the currently opened application.
 
-You really do not have to think about it after the initial setup.
+You really do not have to think about it after initial setup.
+
+</div>
 
 ## Supported platforms ✅
 
