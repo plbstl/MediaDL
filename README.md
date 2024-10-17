@@ -4,6 +4,7 @@
 
 # MediaDL
 
+[![Install MediaDL][install-badge]][install-link]
 [![Release][gh-release-badge]][gh-release-link]
 [![GitHub Issues][gh-issues-badge]][gh-issues-link]
 [![GitHub Pull Requests][gh-pulls-badge]][gh-pulls-link]
@@ -105,6 +106,8 @@ Check the [Contribution Guide](./CONTRIBUTING.md) for how to contribute to this 
 [gh-pulls-link]: https://github.com/plbstl/MediaDL/pulls
 [gh-release-badge]: https://img.shields.io/github/v/release/plbstl/MediaDL?sort=semver
 [gh-release-link]: https://github.com/plbstl/MediaDL/releases
+[install-badge]: https://img.shields.io/badge/install_MediaDL-7c3aed?style=flat-square
+[install-link]: https://plbstl.github.io/MediaDL/install
 
 <!-- App links -->
 
