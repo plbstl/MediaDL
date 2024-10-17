@@ -108,6 +108,6 @@ Check the [Contribution Guide](./CONTRIBUTING.md) for how to contribute to this 
 
 <!-- App links -->
 
-[mediadl-shortcut-link]: https://www.icloud.com/shortcuts/541e44a65b4a428b9f51d3f171074983
+[mediadl-shortcut-link]: https://www.icloud.com/shortcuts/ec0fca8c3fd441e6a7414321343a0674
 [scriptable-app-link]: https://apps.apple.com/app/scriptable/id1405459188
 [shortcuts-app-link]: https://apps.apple.com/app/shortcuts/id915249334
