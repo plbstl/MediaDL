@@ -2,6 +2,6 @@
 
 output_filename=scriptable.js
 
-cat ./helpers/*.js >$output_filename
+cat ./helpers/scriptable/*.js >$output_filename
 
 echo -e "\033[1;32mMerged\033[0m into ./$output_filename"
