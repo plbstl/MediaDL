@@ -5,6 +5,9 @@
 // See: https://docs.webkit.org/Deep%20Dive/JSC/JavaScriptCore.html
 // See: https://docs.scriptable.app/
 
+/**
+ * @returns {Promise<import('./types').InstagramOutput>}
+ */
 async function instagram() {
   /******************************************************************************
    * Constants
