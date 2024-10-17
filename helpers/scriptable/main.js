@@ -40,7 +40,7 @@ Script.complete()
  * @param {string} msg Informational error message to show user
  */
 function scriptError(msg) {
-  return { 'Error message': msg, 'An error occurred': true }
+  return { errorMessage: msg, hasError: true }
 }
 
 /**

@@ -35,7 +35,7 @@ async function instagram() {
   // Check if the user is signed in to Instagram
   if (!(await loggedIn())) {
     // Exit here and prompt the user to log in
-    return instagramOutput({ 'User is not logged in': true })
+    return instagramOutput({ requiresUserLogin: true })
   }
 
   try {
@@ -76,17 +76,17 @@ async function instagram() {
 
         // Collate an output and exit
         return instagramOutput({
-          'Download links': downloadLinks.flat(),
-          'Download link to profile picture': userInfo.user.hd_profile_pic_url_info.url,
-          'Ask to download only profile pic': true,
-          "Post Author's username": userInfo.user.username
+          downloadLinks: downloadLinks.flat(),
+          profilePictureDownloadLink: userInfo.user.hd_profile_pic_url_info.url,
+          downloadProfilePicOnly: true,
+          authorUsername: userInfo.user.username
         })
       } else {
         // Just return the display picture of the inputted user profile
         // Collate an output and exit
         return instagramOutput({
-          'Download links': [userInfo.user.hd_profile_pic_url_info.url],
-          "Post Author's username": user.username
+          downloadLinks: [userInfo.user.hd_profile_pic_url_info.url],
+          authorUsername: user.username
         })
       }
     } else {
@@ -111,8 +111,8 @@ async function instagram() {
 
       // Collate an output and exit
       return instagramOutput({
-        'Download links': downloadLinks,
-        "Post Author's username": postAuthor.username
+        downloadLinks: downloadLinks,
+        authorUsername: postAuthor.username
       })
     }
   } catch (error) {
@@ -141,11 +141,11 @@ async function instagram() {
   function instagramOutput(output) {
     /** @type {InstagramOutput} */
     const defaultOutput = {
-      'Download links': [],
-      'Download link to profile picture': '',
-      'Ask to download only profile pic': false,
-      'User is not logged in': false,
-      "Post Author's username": 'instagram_user'
+      downloadLinks: [],
+      profilePictureDownloadLink: '',
+      downloadProfilePicOnly: false,
+      requiresUserLogin: false,
+      authorUsername: 'instagram_user'
     }
     return { ...defaultOutput, ...output }
   }
@@ -201,11 +201,11 @@ async function instagram() {
 
   /**
    * @typedef {{
-   * 'Download links': DownloadLink[],
-   * 'Download link to profile picture': string,
-   * 'Ask to download only profile pic': boolean,
-   * 'User is not logged in': boolean
-   * Post Author's username": string
+   * downloadLinks: DownloadLink[],
+   * profilePictureDownloadLink: string,
+   * downloadProfilePicOnly: boolean,
+   * requiresUserLogin: boolean
+   * authorUsername: string
    * }} InstagramOutput
    */
 }
