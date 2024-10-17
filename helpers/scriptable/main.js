@@ -52,6 +52,6 @@ function scriptError(msg) {
 async function fetchit(url, loadAction = 'loadJSON') {
   const req = new Request(url)
   // Use `x-ig-app-id` or a mobile `user-agent` header
-  req.headers = { 'x-ig-app-id': '936619743392459' }
+  req.headers = { ...req.headers, 'x-ig-app-id': '936619743392459' }
   return await req[loadAction]()
 }
