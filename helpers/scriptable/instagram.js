@@ -133,11 +133,11 @@ async function instagram() {
 
   /**
    * Exit this script and return the passed in arg as output.
-   * @param {Partial<InstagramOutput>} output Result to send back to Siri Shortcuts
-   * @returns
+   * @param {Partial<import('./types').InstagramOutput>} output Result to send back to Siri Shortcuts
+   * @returns {import('./types').InstagramOutput}
    */
   function instagramOutput(output) {
-    /** @type {InstagramOutput} */
+    /** @type {import('./types').InstagramOutput} */
     const defaultOutput = {
       downloadLinks: [],
       requiresUserLogin: false,
@@ -152,7 +152,7 @@ async function instagram() {
    * We are retrieving the highest quality available for every post or story.
    * This is usually the first item in the URLs list.
    * @param {object} post Instagram post or story to retrieve links from
-   * @returns {DownloadLink[]} An array of download URLs
+   * @returns {import('./types').DownloadLink[]} An array of download URLs
    */
   function extractDownloadLinks(post) {
     const IMAGE = 1
@@ -188,18 +188,4 @@ async function instagram() {
         return []
     }
   }
-
-  /**
-   * @typedef {Object} DownloadLink
-   * @property {string} url Direct link to raw file
-   * @property {number} timestamp Creation date of post
-   */
-
-  /**
-   * @typedef {{
-   * downloadLinks: DownloadLink[],
-   * requiresUserLogin: boolean
-   * authorUsername: string
-   * }} InstagramOutput
-   */
 }
