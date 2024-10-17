@@ -9,7 +9,12 @@
  * Setup
  *****************************************************************************/
 
-const inputUrl = args.shortcutParameter
+/**
+ * **NOTE: THIS VARIABLE IS READ-ONLY.**
+ *
+ * A `var` is used so that it is hoisted to the top of the generated `scriptable.js` module.
+ */
+var inputUrl = args.shortcutParameter
 
 if (!inputUrl) {
   return scriptError('An empty URL was passed in')
