@@ -4,7 +4,7 @@ Thank you for taking the time to read this Guide.
 
 ## Ask questions and provide feedback
 
-Questions can be asked about, suggestions and complaints can be made for new and existing features; error codes and messages; data tracking; typos; the website's contents, look and feel; this guide; ways of doing things; basically anything related to MediaDL. Just [open an issue](https://github.com/plbstl/MediaDL/issues/new) and write everything down.
+Questions can be asked about, suggestions and complaints can be made for new and existing features; error codes and messages; data tracking; typos; the website's contents, look and feel; this guide; ways of doing things; basically anything related to MediaDL. Just [open an issue](https://github.com/plbstl/MediaDL/issues/new) and write down everything.
 
 > **NOTE:** You need a GitHub account to open an issue or make a change.
 
@@ -18,9 +18,9 @@ Here is a helper video on the process of submitting pull requests: <https://yout
 
 You can export a Siri Shortcut as a file and attach it when opening an issue or submitting a pull request.
 
-- You need an internet connection to export a Shortcut (Apple needs to sign it on their servers).
-- Open the Shortcuts app.
-- Long press the Shortcut you want to export.
+- You need an internet connection to export a shortcut (Apple needs to sign it on their servers).
+- On your mobile device, open the Shortcuts app.
+- Long press the shortcut you want to export.
 - Tap `Share`, tap `Options >`, and send as `File` for `Anyone`.
 - Tap `Done`.
 - Now you can `Save to Files`, AirDrop or share in any other way you prefer.

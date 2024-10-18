@@ -47,19 +47,19 @@ MediaDL works in browsers too.
 ## Installation 📲
 
 1. The Shortcuts app comes preinstalled on Apple devices. In the case that yours is deleted, install [Shortcuts][shortcuts-app-link] from the App Store.
-2. Scriptable is used for functionality not yet available in the Shortcuts app. You can use it for a lot of other stuff, just like Shortcuts app. Install [Scriptable][scriptable-app-link] from the App Store.
+2. Scriptable is used for functionality not yet available in the Shortcuts app. Just like Shortcuts app, you can use it for a lot of other things. Install [Scriptable][scriptable-app-link] from the App Store.
 3. Add the [MediaDL][mediadl-shortcut-link] shortcut to your Shortcuts library.
 4. Attempt to download media from a supported platform of your choice.
 
    > If the platform requires you to sign in, **Scriptable** will open a WebView for you to sign in. Sign in and close Scriptable. Future downloads from the selected platform should complete from now on.
 
-5. Select `Always Allow` when prompted for network access to avoid prompts every time you use the MediaDL shortcut.
+5. Select `Always Allow` when prompted for network access to avoid prompts every time you use MediaDL.
 
 ## Important Notes 🗒️
 
 - MediaDL will **_never ask_** for your username/email or password. You will be presented with a WebView to login into the relevant official platform using their official methods.
 
-- When using mobile data to access the internet, mobile data has to be turned on for both Shortcuts & Scriptable in your device settings for downloads to work.
+- When using mobile data to access the internet, mobile data has to be turned on for both **Shortcuts** & **Scriptable** in your device settings for downloads to work.
 
 - You have to be signed in to the specific platform to access media private to you.
 
