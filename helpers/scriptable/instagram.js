@@ -31,6 +31,9 @@ async function instagram() {
   /** Check for `story_media_id=<id>&`, and match only the `<id>`, against the input URL */
   const storyMediaIdRegex = /(?<=story_media_id=)[0-9]*(?=&)/i
 
+  /** Check for `instagram.com/route/<id>`, and match only the `<id>`, against the input URL */
+  const postIdRegex = /(?<=instagram.com\/(p|reel|s|tv)\/).*(?=\?)/i
+
   /******************************************************************************
    * Main
    *****************************************************************************/
@@ -40,6 +43,10 @@ async function instagram() {
     // Exit here and prompt the user to log in
     return instagramOutput({ requiresUserLogin: true })
   }
+
+  // Retrieve post ID. if no match, just fallback to 'story'
+  const [_postId] = postIdRegex.exec(inputUrl) ?? ['story']
+  const postId = _postId.replaceAll('/', ' ').trim()
 
   try {
     // Fetch webpage of the inputted URL as text
@@ -81,6 +88,7 @@ async function instagram() {
       // We are always returning the profile picture, this can be changed if need be.
       // Collate an output and exit
       return instagramOutput({
+        postId,
         downloadLinks: [...downloadLinks.flat(), userInfo.user.hd_profile_pic_url_info.url],
         authorUsername: userInfo.user.username
       })
@@ -106,6 +114,7 @@ async function instagram() {
 
       // Collate an output and exit
       return instagramOutput({
+        postId,
         downloadLinks: downloadLinks,
         authorUsername: postAuthor.username
       })
@@ -136,10 +145,11 @@ async function instagram() {
   function instagramOutput(output) {
     /** @type {import('./types').InstagramOutput} */
     const defaultOutput = {
-      downloadLinks: [],
-      requiresUserLogin: false,
+      platform: 'Instagram',
+      postId: '',
       authorUsername: 'instagram_user',
-      platform: 'Instagram'
+      downloadLinks: [],
+      requiresUserLogin: false
     }
     return { ...defaultOutput, ...output }
   }
