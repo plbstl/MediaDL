@@ -66,30 +66,24 @@ async function instagram() {
         return scriptError(errorMessage || 'Instagram API status is not ok')
       }
 
+      // Download links
+      const downloadLinks = []
+
       // Check if there are stories available
       if (reelsMedia.reels_media.length > 0) {
         // Extract all the download links to the stories
-        const downloadLinks = []
         for (const item of reelsMedia.reels_media.at(0).items) {
           const link = extractDownloadLinks(item)
           downloadLinks.push(link)
         }
-
-        // We are always returning the profile picture. Trying to
-        // reduce prompts, this can always be changed.
-        // Collate an output and exit
-        return instagramOutput({
-          downloadLinks: [...downloadLinks.flat(), userInfo.user.hd_profile_pic_url_info.url],
-          authorUsername: userInfo.user.username
-        })
-      } else {
-        // Just return the display picture of the inputted user profile
-        // Collate an output and exit
-        return instagramOutput({
-          downloadLinks: [userInfo.user.hd_profile_pic_url_info.url],
-          authorUsername: user.username
-        })
       }
+
+      // We are always returning the profile picture, this can be changed if need be.
+      // Collate an output and exit
+      return instagramOutput({
+        downloadLinks: [...downloadLinks.flat(), userInfo.user.hd_profile_pic_url_info.url],
+        authorUsername: userInfo.user.username
+      })
     } else {
       // This block indicates that this is an image, reel, album (carousel) or story highlight
 
