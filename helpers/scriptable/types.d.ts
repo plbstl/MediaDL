@@ -1,7 +1,5 @@
 export interface DownloadLink {
-  /** Direct link to raw file */
   url: string
-  /** Creation date of post */
   timestamp: number
 }
 
